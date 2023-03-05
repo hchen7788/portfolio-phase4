@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>method test</title>
+        <script src='./JS/methodtest.js'></script>
+
+    </head>
+
+
+    <body>
+        <a href="./webcomponent.html">Link to part 2</a>
+
+        <form id="fakeRecordId">
+            <label for="article-name">Article Name:</label>
+            <input id="articleNameInput" type="text" name="article-name" value="Article Name"><br>
+            <label for="article-body">Articel Body:</label>
+            <textarea id="articleBodyInput" name="article-body"></textarea><br>
+        </form>
+
+        <form>
+            <p>Please select your desired method of POST:</p>
+            <input type="radio" id="XMLPost" name="postMethod" value="XMLHttpRequest">
+            <label for="XMLPost">XMLHttpRequest</label><br>
+            <input type="radio" id="fetchPost" name="postMethod" value="Fetch">
+            <label for="fetchPost">Fetch API</label><br>
+        </form>
+
+        <form>
+            <p>Please select your desired method of POST:</p>
+            <input type="radio" id="XMLGet" name="getMethod" value="XMLHttpRequest">
+            <label for="XMLGet">XMLHttpRequest</label><br>
+            <input type="radio" id="fetchGet" name="getMethod" value="Fetch">
+            <label for="fetchGet">Fetch API</label><br>
+        </form>
+
+        <button onclick="post()">postBtn</button>
+        <button onclick="get()">getBtn</button>
+        <button onclick="put()">putBtn</button>
+        <button onclick="deleteRequest()">deleteBtn</button>
+
+        <output id="response"></output>
+    </body>
+</html>
