@@ -34,6 +34,22 @@
             <label for="fetchGet">Fetch API</label><br>
         </form>
 
+        <form>
+            <p>Please select your desired method of PUT:</p>
+            <input type="radio" id="XMLPut" name="putMethod" value="XMLHttpRequest">
+            <label for="XMLPut">XMLHttpRequest</label><br>
+            <input type="radio" id="fetchPut" name="putMethod" value="Fetch">
+            <label for="fetchPut">Fetch API</label><br>
+        </form>
+
+        <form>
+            <p>Please select your desired method of DELETE:</p>
+            <input type="radio" id="XMLDelete" name="deleteMethod" value="XMLHttpRequest">
+            <label for="XMLDelete">XMLHttpRequest</label><br>
+            <input type="radio" id="fetchDelete" name="deleteMethod" value="Fetch">
+            <label for="fetchDelete">Fetch API</label><br>
+        </form>
+
         <button onclick="post()">postBtn</button>
         <button onclick="get()">getBtn</button>
         <button onclick="put()">putBtn</button>
