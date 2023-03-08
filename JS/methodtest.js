@@ -97,7 +97,7 @@ function getWithFetch(){
     .then(response => response.text())
     .then(text => {
         document.getElementById('response').innerText = text;
-    })
+    });
 }
 
 
@@ -179,9 +179,27 @@ function deleteRequest(){
 }
 
 function deleteWithXML(){
-    alert("in deleteWithXML");
+    let xhr = new XMLHttpRequest();
+    xhr.open('DELETE', "https://httpbin.org/delete");
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function (){
+        if (xhr.readyState == 4){
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+        }
+    };
+
+    xhr.send();
 }
 
 function deleteWithFetch(){
     alert("in deleteWithFetch");
+    fetch("https://httpbin.org/delete", {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json());
+    
 }
