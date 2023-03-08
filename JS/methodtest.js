@@ -55,9 +55,9 @@ async function postWithFetch(){
     },
     body: JSON.stringify(data)
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(response => {
-        document.getElementById('response').innerText = response;
+        document.getElementById('response').innerText = JSON.stringify(response, null, 2);
     });
 }
 
@@ -94,9 +94,9 @@ function getWithFetch(){
             'Accept': 'application/json'
         }
     })
-    .then(response => response.text())
-    .then(text => {
-        document.getElementById('response').innerText = text;
+    .then(response => response.json())
+    .then(response => {
+        document.getElementById('response').innerText = JSON.stringify(response, null, 2);
     });
 }
 
@@ -156,9 +156,9 @@ async function putWithFetch(){
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(response => {
-        document.getElementById('response').innerText = response;
+        document.getElementById('response').innerText = JSON.stringify(response, null, 2);
     });
 
 }
@@ -199,9 +199,9 @@ function deleteWithFetch(){
             'Content-Type': 'application/json'
         }
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(response => {
-        document.getElementById('response').innerText = response;
+        document.getElementById('response').innerText = JSON.stringify(response, null, 2);
     });
     
 }
