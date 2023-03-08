@@ -1,7 +1,6 @@
 
 function post(){
     let postMethod = document.getElementsByName('postMethod');
-    console.log(postMethod);
 
     if(postMethod[0].checked){
         postWithXML();
@@ -20,8 +19,7 @@ function postWithXML(){
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-        console.log(xhr.status);
-        console.log(xhr.responseText);
+            document.getElementById('response').innerText = xhr.responseText;
         }
     };
 
@@ -43,21 +41,23 @@ async function postWithFetch(){
     let body = document.getElementById('articleBodyInput').value;
     let date = new Date();
 
-    const response = await fetch("https://httpbin.org/post", {
+    let data = {
+        "article-name": name,
+        "article-body": body,
+        "date": date
+    };
+
+    fetch("https://httpbin.org/post", {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
-    body: `{
-        "article-name": ${name},
-        "article-body": ${body},
-        "date": ${date}
-        }`,
-    });
-
-    response.json().then(data => {
-    console.log(JSON.stringify(data));
+    body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(response => {
+        document.getElementById('response').innerText = response;
     });
 }
 
@@ -121,8 +121,7 @@ function putWithXML(){
 
     xhr.onreadystatechange = function (){
         if (xhr.readyState == 4){
-            console.log(xhr.status);
-            console.log(xhr.responseText);
+            document.getElementById('response').innerText = xhr.responseText;
         }
     };
 
@@ -157,8 +156,10 @@ async function putWithFetch(){
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {console.log(JSON.stringify(data))});
+    .then(response => response.text())
+    .then(response => {
+        document.getElementById('response').innerText = response;
+    });
 
 }
 
@@ -184,8 +185,7 @@ function deleteWithXML(){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function (){
         if (xhr.readyState == 4){
-            console.log(xhr.status);
-            console.log(xhr.responseText);
+            document.getElementById('response').innerText = xhr.responseText;
         }
     };
 
@@ -193,13 +193,15 @@ function deleteWithXML(){
 }
 
 function deleteWithFetch(){
-    alert("in deleteWithFetch");
     fetch("https://httpbin.org/delete", {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => response.json());
+    .then(response => response.text())
+    .then(response => {
+        document.getElementById('response').innerText = response;
+    });
     
 }
