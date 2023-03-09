@@ -6,6 +6,16 @@ class ButtonCount extends HTMLElement{
         this.attachShadow({ mode: 'open'});
         //add your content to the root of the Shadow DOM that was created
         this.shadowRoot.innerHTML = '<h1>web component</h1>';
+
+        const wrapper = document.createElement("span");
+        wrapper.setAttribute("class", "wrapper");
+
+        const btn = wrapper.appendChild(document.createElement("button"));
+        // Take attribute content and put it inside the btn span
+        btn.textContent = this.getAttribute("data-text");
+
+        this.shadowRoot.append(wrapper);
+
     }
 }
 
