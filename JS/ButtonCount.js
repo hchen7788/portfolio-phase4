@@ -10,13 +10,18 @@ class ButtonCount extends HTMLElement{
         const wrapper = document.createElement("span");
         wrapper.setAttribute("class", "wrapper");
 
+        
         const btn = wrapper.appendChild(document.createElement("button"));
-        // Take attribute content and put it inside the btn span
-        btn.textContent = "Times Clicked: ";
-
-        btn.setAttribute('counter', '0');
-        let counter = btn.getAttribute("counter");
-        console.log(counter)
+        let counter = 0;
+        btn.setAttribute('counter', counter);
+        btn.textContent = "Times Clicked: " + btn.getAttribute("counter");
+        
+        btn.addEventListener('click', () => {
+            counter += 1;
+            btn.setAttribute('counter', counter);
+            btn.textContent = "Times Clicked: " + btn.getAttribute("counter");
+            console.log(counter);
+        })
 
         this.shadowRoot.append(wrapper);
 
