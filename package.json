@@ -1,8 +1,8 @@
 {
   "name": "portfoliio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Name: Haitong Chen",
+  "main": "ButtonCountReact.js",
   "dependencies": {
     "algoliasearch": "^4.14.3",
     "dompurify": "^3.0.0"
