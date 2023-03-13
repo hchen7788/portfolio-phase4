@@ -1,9 +1,7 @@
-Portfolio - <https://bucolic-sawine-bbcd03.netlify.app>
+Portfolio - <https://startling-kheer-a90d41.netlify.app>
 
-Part 1 - <https://bucolic-sawine-bbcd03.netlify.app/nativedialogs.html>
+Part 1 - <https://startling-kheer-a90d41.netlify.app/methodtests.html>
 
-Part 2 - <https://bucolic-sawine-bbcd03.netlify.app/customdialogs.html>
+Part 2 - <https://startling-kheer-a90d41.netlify.app/webcomponent.html>
 
-Part 3 - <https://bucolic-sawine-bbcd03.netlify.app/crud.html>
-
-Part 4 - <https://bucolic-sawine-bbcd03.netlify.app/styledcrud.html>
+Part 3 - <https://startling-kheer-a90d41.netlify.app/extracredit.html>
