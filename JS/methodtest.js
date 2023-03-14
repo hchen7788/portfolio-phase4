@@ -23,11 +23,13 @@ function postWithXML(){
         }
     };
 
+    let articleId = document.getElementById('articleIdInput').value;
     let name = document.getElementById('articleNameInput').value;
     let body = document.getElementById('articleBodyInput').value;
     let date = new Date();
 
     let data = `{
+        "article-id": ${articleId},
         "article-name": ${name},
         "article-body": ${body},
         "date": ${date}
@@ -37,11 +39,13 @@ function postWithXML(){
 }
 
 async function postWithFetch(){
+    let articleId = document.getElementById('articleIdInput').value;
     let name = document.getElementById('articleNameInput').value;
     let body = document.getElementById('articleBodyInput').value;
     let date = new Date();
 
     let data = {
+        "article-id": articleId,
         "article-name": name,
         "article-body": body,
         "date": date
@@ -125,11 +129,13 @@ function putWithXML(){
         }
     };
 
+    let articleId = document.getElementById('articleIdInput').value;
     let name = document.getElementById('articleNameInput').value;
     let body = document.getElementById('articleBodyInput').value;
     let date = new Date();
 
     data = `{
+        "article-id": ${articleId},
         "article-name": ${name},
         "article-body": ${body},
         "date": ${date}
@@ -139,11 +145,13 @@ function putWithXML(){
 }
 
 async function putWithFetch(){
+    let articleId = document.getElementById('articleIdInput').value;
     let name = document.getElementById('articleNameInput').value;
     let body = document.getElementById('articleBodyInput').value;
     let date = new Date();
 
     let data = `{
+        "article-id": ${articleId},
         "article-name": ${name},
         "article-body": ${body},
         "date": ${date}
